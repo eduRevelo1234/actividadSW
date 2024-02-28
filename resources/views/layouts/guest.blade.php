@@ -1,30 +1,85 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>{{ config('app.name', 'Laravel') }}</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        body {
+            background-color: rgb(17, 17, 17);
+            color: white;
+            font-family: "Roboto", sans-serif;
+        }
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
-            <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
-            </div>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
-                {{ $slot }}
-            </div>
-        </div>
-    </body>
+        form {
+            width: 715px;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input.form-control,
+        select.form-select {
+            background-color: black;
+            border-color: white;
+            color: white;
+            width: 100%;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        input.form-control:focus,
+        select.form-select:focus,
+        textarea.form-control:focus {
+            background-color: black;
+            border-color: white;
+            color: white;
+        }
+
+        textarea.form-control {
+            background-color: black;
+            border-color: white;
+            color: white;
+            width: 100%;
+            height: 70%;
+        }
+
+        .btn-primary {
+            background-color: #00bb2d;
+            border-color: #00bb2d;
+            color: black;
+            margin: 0 auto;
+            display: block;
+            width: 50%;
+            height: 60px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 30px;
+        }
+
+        button.btn-primary:hover {
+            background-color: #10ff10;
+            border-color: #10ff10;
+            color: black;
+        }
+    </style>
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body>
+    {{ $slot }}
+</body>
+
 </html>

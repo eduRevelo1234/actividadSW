@@ -1,52 +1,74 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
+    <div class="container">
+        <form id="registro_usuario_form" name="registro_usuario_form" method="POST" class="row g-3"
+            action="{{ route('register') }}">
+            @csrf
+            <div class="col-md-6">
+                <h2 class="mb-4">Formulario de Registro</h2>
+            </div>
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-6">
+                <x-input-label for="name" :value="__('Name')" />
+                <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"
+                    required autofocus autocomplete="name" />
+                <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            </div>
+            <div class="col-md-6">
+                <label for="surname" class="form-label">Apellidos:</label>
+                <input type="text" id="surname" name="surname" class="form-control" required>
+            </div>
 
-        @csrf
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
+            <div class="col-md-6">
+                <label for="dni" class="form-label">DNI:</label>
+                <input type="text" id="dni" name="dni" class="form-control" required>
+            </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+            <div class="col-md-6">
+                <label for="password" class="form-label">Contraseña:</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+            <div class="col-md-6">
+                <label for="password_confirmation" class="form-label">Repetir Contraseña:</label>
+                <input type="password" id="password_confirmation" name="password_confirmation" class="form-control"
+                    required>
+            </div>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+            <div class="col-md-6">
+                <label for="telephone" class="form-label">Teléfono:</label>
+                <input type="tel" id="telephone" name="telephone" class="form-control">
+            </div>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+            <div class="col-md-6">
+                <label for="country" class="form-label">País:</label>
+                <select id="country" name="country" class="form-select">
+                    <option value="Argentina">Argentina</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Chile">Chile</option>
+                    <!-- Otros países... -->
+                </select>
+            </div>
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
+            <div class="col-md-12">
+                <label for="bankingAccount" class="form-label">Número de cuenta bancaria:</label>
+                <input type="text" id="bankingAccount" name="bankingAccount" class="form-control" required>
+            </div>
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
+            <div class="col-md-12">
+                <label for="about" class="form-label">Sobre ti:</label>
+                <textarea id="about" name="about" class="form-control" rows="5" required></textarea>
+            </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">Registrarse</button>
+            </div>
+        </form>
+    </div>
 
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
 </x-guest-layout>

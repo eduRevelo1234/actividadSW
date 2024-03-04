@@ -10,14 +10,6 @@
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
-        #registro_usuario_form {
-            width: 715px;
-            background-color: rgba(0, 0, 0, 0.9);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 0 auto;
-        }
-
         form input[type="text"],
         form input[type="email"],
         form input[type="tel"],
@@ -37,12 +29,13 @@
             background-color: #00bb2d;
             border-color: #00bb2d;
             color: black;
-            width: 100%;
+            width: 90%;
             height: 60px;
             font-size: 20px;
             font-weight: bold;
             border-radius: 30px;
             cursor: pointer;
+            margin-top: 20px;
         }
 
         form h2,
@@ -93,6 +86,20 @@
 
         .input-error {
             border: 1px solid red !important;
+        }
+
+        .container-login {
+            padding-top: 40px;
+            max-width: 400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            padding-top: 40px;
+            max-width: 600px;
+            margin: 0 auto;
         }
     </style>
     <!-- Scripts -->

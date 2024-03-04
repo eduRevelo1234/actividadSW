@@ -320,9 +320,8 @@
                 <x-input-error :messages="$errors->get('about')" class="mt-2" />
             </div>
 
-            <div class="col-md-12">
-                <button type="submit" class="btn btn-primary">Registrarse</button>
-            </div>
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+
         </form>
     </div>
 

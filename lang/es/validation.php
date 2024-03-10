@@ -232,5 +232,9 @@ return [
         'user'                     => 'usuario',
         'username'                 => 'usuario',
         'year'                     => 'año',
+        'about'                    => 'sobre ti',
+        'telephone'                => 'teléfono',
+        'bankingAccount'           => 'cuenta bancaria',
+        'surname'                  => 'apellido',
     ],
 ];
